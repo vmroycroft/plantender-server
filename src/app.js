@@ -26,6 +26,8 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
 
-app.listen({ port: process.env.PORT || 4000 }, () =>
-  console.log(`Waterlog server ready at http://localhost:4000${server.graphqlPath}`)
+app.listen(
+  { port: process.env.PORT || 4000 },
+  () => console.log(`Waterlog server ready at ${server.graphqlPath}`)
+  // console.log(`Waterlog server ready at http://localhost:4000${server.graphqlPath}`)
 );
