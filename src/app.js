@@ -13,12 +13,18 @@ const server = new ApolloServer({
   engine: {
     reportSchema: true,
     graphVariant: "current",
+    introspection: true,
+    playground: true,
   },
 });
 
 const app = express();
 
 server.applyMiddleware({ app });
+
+app.get("/", (req, res) => {
+  res.send("hello");
+});
 
 app.listen({ port: process.env.PORT || 4000 }, () =>
   console.log(`Waterlog server ready at http://localhost:4000${server.graphqlPath}`)
