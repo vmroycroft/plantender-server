@@ -1,6 +1,6 @@
 # Waterlog GraphQL Server
 
-![Version](https://img.shields.io/github/package-json/v/vmroycroft/rainql)
+![Version](https://img.shields.io/github/package-json/v/vmroycroft/waterlog-server)
 
 A GraphQL server for the Waterlog web app. Built with [Apollo Server](https://www.apollographql.com/docs/apollo-server/).
 
@@ -18,9 +18,27 @@ A GraphQL server for the Waterlog web app. Built with [Apollo Server](https://ww
 
    - The port to run the server on
 
-   ```
-   PORT=1234
-   ```
+      ```
+      PORT=1234
+      ```
+
+   - The name of the MongoDB database to use
+   
+      ```
+      DB_NAME=mydb
+      ```
+
+   - The MongoDB user to use
+   
+      ```
+      DB_USER=dbuser
+      ```
+
+   - The MongoDB user password
+
+      ```
+      DB_PASSWORD=abc
+      ```
 
 3. Start the server & watch source
 
