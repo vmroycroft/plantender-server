@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const typeDefs = require("./schema");
 const resolvers = require("./resolvers");
@@ -15,8 +16,10 @@ const server = new ApolloServer({
   },
 });
 
+const app = express();
+
 server.applyMiddleware({ app });
 
-app.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-  console.log(`Waterlog server ready at ${url}`);
-});
+app.listen({ port: process.env.PORT || 4000 }, () =>
+  console.log(`Waterlog server ready at http://localhost:4000${server.graphqlPath}`)
+);
