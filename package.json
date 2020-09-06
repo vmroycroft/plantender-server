@@ -7,7 +7,7 @@
     "node": "12.x"
   },
   "scripts": {
-    "start": "node src/app.js"
+    "start": "nodemon --exec \"heroku local\" --signal SIGTERM"
   },
   "dependencies": {
     "apollo-server": "^2.17.0",
