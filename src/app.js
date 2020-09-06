@@ -13,8 +13,6 @@ const server = new ApolloServer({
   engine: {
     reportSchema: true,
     graphVariant: "current",
-    introspection: true,
-    playground: true,
   },
 });
 
@@ -22,12 +20,8 @@ const app = express();
 
 server.applyMiddleware({ app });
 
-app.get("/", (req, res) => {
-  res.send("hello");
-});
+// app.get("/", (req, res) => {
+//   res.send("I'm here :)");
+// });
 
-app.listen(
-  { port: process.env.PORT || 4000 },
-  () => console.log(`Waterlog server ready at ${server.graphqlPath}`)
-  // console.log(`Waterlog server ready at http://localhost:4000${server.graphqlPath}`)
-);
+app.listen({ port: process.env.PORT || 4000 }, () => console.log(`Waterlog server ready at ${server.graphqlPath}`));
