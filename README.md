@@ -16,12 +16,6 @@ A GraphQL server for the Waterlog web app. Built with [Apollo Server](https://ww
 
    Rename `.env.example` to `.env` and set the following variables:
 
-   - The port to run the server on
-
-     ```
-     PORT=1234
-     ```
-
    - Your MongoDB connection string
 
      ```
