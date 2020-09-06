@@ -1,7 +1,6 @@
 # Waterlog GraphQL Server
 
 ![Version](https://img.shields.io/github/package-json/v/vmroycroft/waterlog-server)
-![Heroku Status](https://heroku-badge.herokuapp.com/?app=guarded-falls-56638)
 
 A GraphQL server for the Waterlog web app. Built with [Apollo Server](https://www.apollographql.com/docs/apollo-server/).
 
@@ -23,22 +22,16 @@ A GraphQL server for the Waterlog web app. Built with [Apollo Server](https://ww
      PORT=1234
      ```
 
-   - The name of the MongoDB database to use
+   - Your MongoDB connection string
 
      ```
-     DB_NAME=mydb
+     DB_CONNECTION_STRING=db-connection-string
      ```
 
-   - The MongoDB user to use
+   - Your Apollo key
 
      ```
-     DB_USER=dbuser
-     ```
-
-   - The MongoDB user password
-
-     ```
-     DB_PASSWORD=abc
+     APOLLO_KEY=apollo-key
      ```
 
 3. Start the server & watch source
