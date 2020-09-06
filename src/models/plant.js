@@ -1,11 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const plantSchema = new Schema({
-	name: String,
-	lastWatered: String,
+  name: String,
+  lastWatered: String,
+  group: String,
 });
 
-const Plant = mongoose.model('plant', plantSchema);
+const Plant = mongoose.model("plant", plantSchema);
 
 module.exports = Plant;

@@ -5,9 +5,9 @@ module.exports = {
     plants: async (_) => await Plant.find(),
   },
   Mutation: {
-    addPlant: async (_, { name }) => {
+    addPlant: async (_, { name, date, group }) => {
       try {
-        const doc = await Plant.create({ name });
+        const doc = await Plant.create({ name, group, lastWatered: date });
 
         return {
           success: true,
