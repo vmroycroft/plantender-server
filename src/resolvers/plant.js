@@ -1,25 +1,45 @@
-const { Plant } = require('../models');
+const { Plant } = require("../models");
 
 module.exports = {
-	Query: {
-		plants: async (_, args) => await Plant.find(args).exec()
-	},
-	Mutation: {
-		addPlant: async (_, args) => {
-			try {
-				let response = await Plant.create(args);
-				return {
-					success: true,
-					message: null,
-					plant: response
-				};
-			} catch (e) {
-				return {
-					success: false,
-					message: e.message,
-					plant: null
-				};
-			}
-		}
-	}
+  Query: {
+    plants: async (_) => await Plant.find(),
+  },
+  Mutation: {
+    addPlant: async (_, { name }) => {
+      try {
+        const doc = await Plant.create({ name });
+
+        return {
+          success: true,
+          message: null,
+          plant: doc,
+        };
+      } catch (e) {
+        return {
+          success: false,
+          message: e.message,
+          plant: null,
+        };
+      }
+    },
+    waterPlant: async (_, { id, date }) => {
+      try {
+        const doc = await Plant.findById(id);
+        doc.lastWatered = date;
+        await doc.save();
+
+        return {
+          success: true,
+          message: null,
+          plant: doc,
+        };
+      } catch (e) {
+        return {
+          success: false,
+          message: e.message,
+          plant: null,
+        };
+      }
+    },
+  },
 };
