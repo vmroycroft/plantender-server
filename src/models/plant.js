@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 const plantSchema = new Schema({
   name: String,
   lastWatered: String,
+  lastFertilized: String,
   group: String,
 });
 

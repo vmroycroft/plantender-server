@@ -11,6 +11,7 @@ const schemas = gql`
   extend type Mutation {
     addPlant(name: String!, date: String!, group: String): AddPlantResponse
     waterPlant(id: String!, date: String!): WaterPlantResponse
+    fertilizePlant(id: String!, date: String!): FertilizePlantResponse
   }
 
   type AddPlantResponse {
@@ -25,11 +26,18 @@ const schemas = gql`
     plant: Plant
   }
 
+  type FertilizePlantResponse {
+    success: Boolean!
+    message: String
+    plant: Plant
+  }
+
   type Plant {
     id: ID!
     name: String!
     lastWatered: String!
-    group: String
+    lastFertilized: String!
+    group: String!
   }
 `;
 
