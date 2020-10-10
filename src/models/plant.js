@@ -5,6 +5,7 @@ const plantSchema = new Schema({
   name: String,
   lastWatered: String,
   lastFertilized: String,
+  fertilizeFrequency: Number,
   group: String,
 });
 
