@@ -1,5 +1,5 @@
 {
-  "name": "waterlog-server",
+  "name": "plantender-server",
   "version": "0.1.0",
   "license": "MIT",
   "main": "app.js",

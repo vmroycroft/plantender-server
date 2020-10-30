@@ -1,8 +1,8 @@
-# Waterlog GraphQL Server
+# Plantender GraphQL Server
 
-![Version](https://img.shields.io/github/package-json/v/vmroycroft/waterlog-server)
+![Version](https://img.shields.io/github/package-json/v/vmroycroft/plantender-server)
 
-A GraphQL server for the Waterlog web app. Built with [Apollo Server](https://www.apollographql.com/docs/apollo-server/).
+A GraphQL server for the Plantender web app. Built with [Apollo Server](https://www.apollographql.com/docs/apollo-server/).
 
 ## Quick Start
 

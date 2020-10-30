@@ -20,4 +20,4 @@ const app = express();
 
 server.applyMiddleware({ app });
 
-app.listen({ port: process.env.PORT || 4000 }, () => console.log(`Waterlog server ready at ${server.graphqlPath}`));
+app.listen({ port: process.env.PORT || 4000 }, () => console.log(`Plantender server ready at ${server.graphqlPath}`));
