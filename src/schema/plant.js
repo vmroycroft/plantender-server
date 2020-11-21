@@ -1,45 +1,74 @@
-const { gql } = require("apollo-server");
+const { gql } = require('apollo-server');
 
 const schemas = gql`
-  extend type Query {
-    """
-    Returns all plants.
-    """
-    plants: [Plant]
-  }
+	extend type Query {
+		"""
+		Returns all plants.
+		"""
+		plants: [Plant]
+	}
 
-  extend type Mutation {
-    addPlant(name: String!, date: String!, group: String, fertilizeFrequency: Int): AddPlantResponse
-    waterPlant(id: String!, date: String!): WaterPlantResponse
-    fertilizePlant(id: String!, date: String!): FertilizePlantResponse
-  }
+	extend type Mutation {
+		addPlant(
+			name: String!
+			date: String!
+			group: String
+			fertilizeFrequency: Int
+		): Response
 
-  type AddPlantResponse {
-    success: Boolean!
-    message: String
-    plant: Plant
-  }
+		waterPlant(id: String!, date: String!): Response
 
-  type WaterPlantResponse {
-    success: Boolean!
-    message: String
-    plant: Plant
-  }
+		fertilizePlant(id: String!, date: String!): Response
 
-  type FertilizePlantResponse {
-    success: Boolean!
-    message: String
-    plant: Plant
-  }
+		undoWaterPlant(id: String!): Response
 
-  type Plant {
-    id: ID!
-    name: String!
-    lastWatered: String!
-    lastFertilized: String
-    fertilizeFrequency: Int
-    group: String!
-  }
+		undoFertilizePlant(id: String!): Response
+	}
+
+	type Response {
+		success: Boolean!
+		message: String
+		plant: Plant
+	}
+
+	# type AddPlantResponse {
+	# 	success: Boolean!
+	# 	message: String
+	# 	plant: Plant
+	# }
+
+	# type WaterPlantResponse {
+	# 	success: Boolean!
+	# 	message: String
+	# 	plant: Plant
+	# }
+
+	# type FertilizePlantResponse {
+	# 	success: Boolean!
+	# 	message: String
+	# 	plant: Plant
+	# }
+	
+	# type UndoWaterPlantResponse {
+	# 	success: Boolean!
+	# 	message: String
+	# 	plant: Plant
+	# }
+
+	# type UndoFertilizePlantResponse {
+	# 	success: Boolean!
+	# 	message: String
+	# 	plant: Plant
+	# }
+
+	type Plant {
+		id: ID!
+		name: String!
+		watered: [String]!
+		fertilized: [String]
+		fertilizeFrequency: Int
+		group: String
+	}
 `;
 
 module.exports = schemas;
