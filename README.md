@@ -2,27 +2,33 @@
 
 ![Version](https://img.shields.io/github/package-json/v/vmroycroft/plantender-server)
 
-A GraphQL server for the Plantender web app. Built with [Apollo Server](https://www.apollographql.com/docs/apollo-server/).
+A GraphQL server for the Plantender web app. Built with [Apollo Server](https://www.apollographql.com/docs/apollo-server/). Uses Node.js, Docker, Heroku, and MongoDB.
 
 ## Quick Start
 
-1. Install dependencies
+1. Install [Node.js](https://nodejs.org/en/).
+
+2. Install [Docker](https://www.docker.com/get-started).
+
+3. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+
+4. Install dependencies
 
    ```
    npm install
    ```
 
-2. Update environment variables
+5. Update environment variables
 
    Rename `.env.example` to `.env` and set the following variables:
 
-   - Your port
+   - The server port
 
      ```
      PORT=1234
      ```
 
-   - Your MongoDB connection string
+   - The connection string for your MongoDB instance
 
      ```
      DB_CONNECTION_STRING=db-connection-string
@@ -34,7 +40,13 @@ A GraphQL server for the Plantender web app. Built with [Apollo Server](https://
      APOLLO_KEY=apollo-key
      ```
 
-3. Start the server & watch source
+6. Open a console and use Docker Compose to start a Docker container running MongoDB.
+
+   ```
+   docker-compose up -d
+   ```
+
+7. Start the server & watch source
 
    ```
    npm start
